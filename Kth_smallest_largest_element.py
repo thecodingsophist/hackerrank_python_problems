@@ -22,7 +22,6 @@ def kth_smallest(k, array):
     return array[k-1]
 
 #from biggest to smallest using built-in function, then count
-
 def kth_largest(k, array):
     #sort
     array.sort(reverse = True)
@@ -30,9 +29,43 @@ def kth_largest(k, array):
     print(array[k-1])
     return array[k-1]
 
+#yes duplicates, find kth smallest
+def kth_smallest_with_duplicates(k, array):
+    #clean array
+    #this should return some with duplicates
+    array.sort() #n log n
+    n = 0
+    for integer in array: # n
+        if n == len(array)-1:
+            break
+        if array[n] == array[n+1]:
+            array.pop(n)
+            print(array)
+        n += 1
+    print(array[k-1]) # n log n + n, which is equal to # n log n
+    return array[k-1]
+    #use kth_smallest on cleaned list
+
+def kth_largest_with_duplicates(k, array):
+    #this should return some with duplicates
+    array.sort(reverse = True)
+    n = 0
+    #clean array
+    for integer in array:
+        print(n)
+        if n == len(array)-1:
+            break
+        if array[n] == array[n+1]:
+            array.pop(n)
+            print(array)
+        n += 1
+    print(array[k-1])
+    return array[k-1]
 
 #RUN
 k = 1
-array = [3,4,1,2]
-kth_smallest(k, array)
-kth_largest(k, array)
+array = [3,4,4,1,2,27,27]
+# kth_smallest(k, array)
+# kth_largest(k, array)
+# kth_smallest_with_duplicates(k, array)
+kth_largest_with_duplicates(k, array)
