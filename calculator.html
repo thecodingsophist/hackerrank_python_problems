@@ -1,0 +1,44 @@
+<!-- Building a Calculator using Vanilla Javascript -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Calculator</p>
+
+<form id="demo" action="/action_page.php">
+  First Number: <input id="fnumber" type="number" name="Fnumber"><br>
+  Second Number: <input id="snumber" type="number" name="Snumber"><br><br>
+
+  <!--<fieldset id="group1">-->
+      Add: <input id="operator" type="radio" value="add" name="calculator">
+      Subtract: <input id="operator" type="radio" value="subtract" name="calculator">
+  <!--</fieldset>-->
+
+  <input type="button" onclick="myFunction()" value="Submit">
+</form>
+
+<p id="answer"> THE ANSWER <p>
+
+<script>
+function myFunction() {
+    // PSEUDOCODE
+    // get inputs from form
+    // add inputs
+    // set input to line below (in X)
+    console.log(document.getElementsByName("calculator"))
+
+    var radios = document.getElementsByName('calculator');
+
+     if (radios[0].checked) {
+         document.getElementById("answer").innerHTML = parseInt(document.getElementById("fnumber").value) + parseInt(document.getElementById("snumber").value)
+     }
+     else {
+         document.getElementById("answer").innerHTML = parseInt(document.getElementById("fnumber").value) - parseInt(document.getElementById("snumber").value)
+     }
+ }
+
+</script>
+
+</body>
+</html>

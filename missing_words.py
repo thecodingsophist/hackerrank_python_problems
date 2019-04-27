@@ -23,5 +23,5 @@ def missingWords(s, t):
     return word_array
 
 if __name__ == '__main__':
-    print(str(missingWords("I like cheese like", "like like")) + " should return I and cheese")
+    print(str(missingWords("I like cheese like much", "like")) + " should return I and cheese and like and much")
     # print(str(missingWords("")))
