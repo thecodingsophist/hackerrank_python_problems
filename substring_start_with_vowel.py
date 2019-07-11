@@ -69,6 +69,26 @@ def minion_game_solution2(string):
     else:
          return print("Draw")
 
+def minion_game_solution3(string):
+    k = s = 0
+
+    vowels = set('AEIOU')
+
+    for i, c in enumerate(string):
+        if c in vowels:
+            k += len(string) - i
+        else:
+            s += len(string) - i
+
+    print("k", k)
+    print("s", s)
+
+    if k == s:
+        return "Draw"
+    elif k > s:
+        return "Kevin " + str(k)
+    else:
+        return "Stuart " + str(s)
 
 if __name__ == '__main__':
-    minion_game_solution2("banana")
+    minion_game_solution3("BANANA")
