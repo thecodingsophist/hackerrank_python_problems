@@ -40,7 +40,7 @@ def isOneOff(wordOne, wordTwo):
                     return False
     return True
 
-#NOTES: review graph traversal problems
+#NOTES: review graph traversal problems and shortest path problems
 
 class Graph:
     def __init__(self, beginNode, wordList):
