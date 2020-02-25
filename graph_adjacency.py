@@ -57,3 +57,5 @@ class Graph(__name__):
         graph.add_edge(3,4)
 
         graph.print_graph()
+
+# Q: why is this returning an error? Would be cool to visualize the graph in a Python GUI
