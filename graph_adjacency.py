@@ -11,7 +11,17 @@ class AdjNode:
 class Graph:
     def __init__(self, vertices):
         self.V = vertices
-        self.graph = [None] * self.V # Not sure if I understand this
+        self.graph = [None] * self.V # Q: Not sure if I understand this
 
     # Function to add an edge in an undirected graph
-    def
+    def add_edge (self, src, dest):
+        # Adding the node to the source node
+        node = AdjNode(dest)
+        node.next = self.graph[src] # Q: what is the next built in function (?) or do we define it?
+        self.graph[src] = node
+
+        # Adding the source node to the destination as it is the undirected graph
+        node = AdjNode(src)
+        node.next = self.graph[dest]
+        self.graph[dest] = node
+        
