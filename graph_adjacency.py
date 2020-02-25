@@ -24,4 +24,13 @@ class Graph:
         node = AdjNode(src)
         node.next = self.graph[dest]
         self.graph[dest] = node
-        
+
+    def print_graph(self):
+        # THIS IS THE IMPORTANT PART + WHAT I"M AFTER
+        for i in range(self.V):
+            print("Adjacency list of vertex {}\n head".format(i), end="")
+            temp = self.graph[i]
+            while temp:
+                print(" -> {}".format(temp.vertex), end="")
+                temp = temp.next
+            print(" \n")
